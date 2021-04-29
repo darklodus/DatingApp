@@ -16,6 +16,8 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   login(model: any){
+    // Look into to something like this for connecting the TS API for internal calls.
+    //return this.http.post(this.baseUrl + 'account/login', model, { headers: new HttpHeaders().set("APIKey", "your-api-key") }).pipe(
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
       map((response: User) => {
         const user = response;
